@@ -1,3 +1,82 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+	height: 100%;
+}
+
+body { 
+	padding-top: 70px;
+	background-color: #000; 
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    padding-left: 50px;
+}
+
+.navbar-brand a {	
+    color: white;
+}
+
+.navbar-brand a:hover {
+    text-decoration: none;
+}
+
+.navbar-inverse {
+	background-color: #000;
+}
+
+.navbar ul li {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.navbar a {
+	transition: color 600ms;
+	-webkit-transition: color 600ms;
+	
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -30px;
+}
+
+#push,
+footer {
+    height: 30px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+footer {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #000;
+}
+
+
+// index page
+
+h1 {
+	font-family: Arial;
+	color: #878787;
+	text-align: center;
+}
