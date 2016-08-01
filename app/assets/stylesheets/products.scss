@@ -9,6 +9,19 @@ h1 {
 
 .product {
 	text-align: center;
+	color: #9d9d9d;
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.product a {
+	color: #9d9d9d;
+	transition: color 600ms;
+	-webkit-transition: color 600ms;	
 }
 
 .product-options {
