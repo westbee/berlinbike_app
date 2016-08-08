@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  resources :users
   get 'static_pages/about'
 
   get 'static_pages/contact'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :products
