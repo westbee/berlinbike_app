@@ -12,7 +12,7 @@
 <body>
 
   	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	  	<div class="container">
+	  	<div class="container-fluid">
 	  		<div class="navbar-header">
 	  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				    <span class="sr-only">Toggle navigation</span>
@@ -37,8 +37,17 @@
 							</ul>		
 					</li>
 					<li><%= link_to "Contact", '/static_pages/contact' %></li>
+					
+					<%= form_tag("/products", method: "get", class: 'navbar-form navbar-left') do %>
+						<div class="form-group">
+							<%= text_field_tag(:q, nil, placeholder: 'What are you looking for?', class: 'form-control') %>
+						</div>
+						<%= button_tag("Search", class: 'btn btn-default') %>
+                    <% end %>
+					
 		      	</ul>
 		    </div> <!-- nav -->
+
 	  	</div> <!-- end nav container-->
   	</nav> <!-- end navbar-->
 
