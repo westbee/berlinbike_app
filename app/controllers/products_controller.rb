@@ -4,12 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if Rails.env == "development"
+      name_env = "name LIKE ?"
+    else
+      name_env = "name ilike ?"
+    end
+
     if params[:q]
       search_term = params[:q]
-      if Rails.env.production?
-        @products = Product.where("name ilike ?", "%#{search_term}%")
-      else
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
+      @products = Product.where(name_env, "%#{search_term}%")
     # return our filtered list here
     else
       @products = Product.all
