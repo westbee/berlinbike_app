@@ -1,24 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="product-presentation">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2 class="text-center"><%= @product.name %></h2>
+				<h3><strong>Price: </strong><%= @product.price %></h3>
+				<h4><u>Product details:</u></h4>
+          		<p><%= @product.description %></p>
+          		<p><%= link_to 'Edit', edit_product_path(@product) %> |
+				<%= link_to 'Back', products_path %></p>
+			</div>
+			<div class="col-md-8">
+				<img src="<%= @product.image_url %>" class="img-responsive">
+			</div>
+			<div class="col-md-12">
+				<h3 class="text-center">Reviews</h3>
+			</div>
+			<div class="col-md-6">
+				<p class="text-center">The heighest rate:</p>
+				<%= @product.highest_rating_comment %>
+			</div>
+			<div class="col-md-6">
+				<p class="text-center">The lowest rate:</p>
+				<%= @product.lowest_rating_comment %>
+			</div>
+			<div class="col-md-12">
+				<p class="text-center">All comments:</p>
+			</div>
+		</div>	
+	</div>	
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
