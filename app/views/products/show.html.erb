@@ -6,6 +6,7 @@
 			<div class="col-md-4">
 				<h2 class="text-center"><%= @product.name %></h2>
 				<h3><strong>Price: </strong><%= @product.price %></h3>
+				<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 				<h4><u>Product details:</u></h4>
           		<p><%= @product.description %></p>
           		<p><%= link_to 'Edit', edit_product_path(@product) %> |
@@ -17,16 +18,11 @@
 			<div class="col-md-12">
 				<h3 class="text-center">Reviews</h3>
 			</div>
-			<div class="col-md-6">
-				<p class="text-center">The heighest rate:</p>
-				<%= @product.highest_rating_comment %>
-			</div>
-			<div class="col-md-6">
-				<p class="text-center">The lowest rate:</p>
-				<%= @product.lowest_rating_comment %>
-			</div>
-			<div class="col-md-12">
-				<p class="text-center">All comments:</p>
+			<%= render 'highest_rating_comment', product: @product %>
+			<%= render 'lowest_rating_comment', product: @product %>
+			<%= render 'comments', product: @product %>
+			<div class="col-md-12">				
+				<%= render 'new_comment', product: @product %>
 			</div>
 		</div>	
 	</div>	
