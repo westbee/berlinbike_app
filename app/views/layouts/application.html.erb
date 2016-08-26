@@ -45,13 +45,12 @@
 						<%= button_tag("Search", class: 'btn btn-default') %>
                     <% end %>
 
-	                <li>
-						<% if user_signed_in? %>
-					    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-					  	<% else %>
-					    <%= link_to('Login', new_user_session_path) %>
-					  	<% end %>
-					 </li>	
+                    <% if user_signed_in? %>
+	                <li><%= link_to "Users", '/users' %></li>
+					<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+					<% else %>
+					<li><%= link_to('Login', new_user_session_path) %></li>
+					<% end %>
 		      	</ul>
 		    </div> <!-- nav -->
 
