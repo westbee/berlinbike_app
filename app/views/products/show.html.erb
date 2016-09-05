@@ -5,8 +5,13 @@
 		<div class="row">
 			<div class="col-md-4">
 				<h2 class="text-center"><%= @product.name %></h2>
-				<h3><strong>Price: </strong><%= @product.price %></h3>
+				<h3><strong>Price: </strong><%= number_to_currency(@product.price, unit:"€ ") %></h3>
 				<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+				<p>
+					<%= form_tag "/payments/create" do %>
+  					<%= render partial: "shared/stripe_checkout_button" %>
+					<% end %>
+				</p>
 				<h4><u>Product details:</u></h4>
           		<p><%= @product.description %></p>
           		<p><%= link_to 'Edit', edit_product_path(@product) %> |
