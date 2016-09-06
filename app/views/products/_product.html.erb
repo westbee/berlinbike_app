@@ -1,6 +1,7 @@
         <div class="col-sm-12 col-md-6">
           <%= image_tag(product.image_url, class: "img-responsive displayed") %>
           <h2><%= product.name %></h2>
+          <% logger.debug "Product: #{product.name}" %>
           <p><%= product.description %></p>
           <strong>Price: <%= number_to_currency(product.price, unit:"€ ") %></strong>
           <div class="product-options">

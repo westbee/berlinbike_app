@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
     if params[:q]
       search_term = params[:q]
+      logger.debug "User is searching for #{search_term}"
       @products = Product.where(name_env, "%#{search_term}%")
     # return our filtered list here
     else
