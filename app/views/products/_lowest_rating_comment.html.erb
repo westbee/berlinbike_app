@@ -1,7 +1,7 @@
 <% if product.comments.count > 2 %>
 	<div class="col-md-6">
 		<p class="text-center">The lowest rate:</p>
-		<div class="product-reviews">
+		<div class="product-reviews2">
 	        <div class="row">
             	<p><%= product.lowest_rating_comment.user.first_name %> <small><em><%= "#{time_ago_in_words(product.lowest_rating_comment.created_at)} ago" %></em></small></p>
            		<p><%= "Rating: #{product.lowest_rating_comment.rating}/5" %></p>

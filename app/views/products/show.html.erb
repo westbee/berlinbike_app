@@ -11,7 +11,7 @@
 			</div>
 			<div class="col-md-8">
 				<h3><strong>Price: </strong><%= number_to_currency(@product.price, unit:"€ ") %></h3>
-				<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+				<p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 				<p>
 					<%= form_tag "/payments/create" do %>
   					<%= render partial: "shared/stripe_checkout_button" %>
