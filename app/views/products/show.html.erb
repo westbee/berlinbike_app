@@ -3,8 +3,13 @@
 <div class="product-presentation">
 	<div class="container">
 		<div class="row">
+			<h2 class="text-center"><%= @product.name %></h2>
 			<div class="col-md-4">
-				<h2 class="text-center"><%= @product.name %></h2>
+				<br><br>
+				<%= image_tag(@product.image_url, width: "300", class: "img-zoom", data_zoom_image: @product.image_url) %>
+				<!-- <img src="<%= @product.image_url %>" class="img-responsive"> -->
+			</div>
+			<div class="col-md-8">
 				<h3><strong>Price: </strong><%= number_to_currency(@product.price, unit:"€ ") %></h3>
 				<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 				<p>
@@ -12,14 +17,14 @@
   					<%= render partial: "shared/stripe_checkout_button" %>
 					<% end %>
 				</p>
+			</div>
+		</div>
 				<h4><u>Product details:</u></h4>
           		<p><%= @product.description %></p>
           		<p><%= link_to 'Edit', edit_product_path(@product) %> |
 				<%= link_to 'Back', products_path %></p>
-			</div>
-			<div class="col-md-8">
-				<img src="<%= @product.image_url %>" class="img-responsive">
-			</div>
+		<div class="row">
+			
 			<div class="col-md-12">
 				<h3 class="text-center">Reviews</h3>
 			</div>
