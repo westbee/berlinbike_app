@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="product-presentation">
+    <% cache @product do %>
 	<div class="container">
 		<div class="row">
 			<h2 class="text-center"><%= @product.name %></h2>
@@ -35,6 +36,7 @@
 				<%= render 'new_comment', product: @product %>
 			</div>
 		</div>	
-	</div>	
+	</div>
+	<% end %>	
 </div>
 
