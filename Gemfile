@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'dalli'
 
+gem 'redis-rails'
+
 gem 'rails-controller-testing'
 
 gem 'stripe'
